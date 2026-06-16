@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="160" viewBox="0 0 240 160">
+  <rect width="240" height="160" fill="#30391f"/>
+  <g shape-rendering="crispEdges">
+    <path fill="#66733b" d="M0 0h40v20h20v20h-40v20h-20zM100 0h60v20h20v20h-40v20h-60v-20h20zM200 0h40v40h-20v20h-40v-20h20zM40 80h40v20h40v40h-20v20h-60v-20h-20v-40h20zM160 80h40v20h40v40h-40v20h-60v-40h20z"/>
+    <path fill="#1a2115" d="M60 0h40v40h-20v20h-40v-20h20zM180 20h20v40h-40v20h-40v-40h60zM0 80h40v20h-20v40h-20zM120 100h40v40h-20v20h-40v-40h20zM200 60h40v40h-20v20h-40v-20h20z"/>
+    <path fill="#8e7d4e" d="M20 40h40v20h40v20h-20v20h-60v-20h-20v-20h20zM140 0h40v20h-20v20h-60v-20h40zM80 80h40v20h-20v20h-40v-20h20zM180 120h60v40h-40v-20h-20z"/>
+    <path fill="#574027" d="M0 20h20v40h40v20h-60zM100 40h40v20h20v20h-60v20h-40v-40h40zM160 60h40v20h-20v20h-40v-20h20zM20 120h20v20h40v20h-80v-20h20z"/>
+    <path fill="#3f4d2b" d="M200 20h20v20h-20zM60 60h20v20h-20zM120 20h20v20h-20zM140 120h20v20h-20zM220 100h20v20h-20zM80 140h20v20h-20z"/>
+  </g>
+</svg>
