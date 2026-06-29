@@ -37,6 +37,10 @@ body {
   overflow-x: hidden;
 }
 
+body.modal-open {
+  overflow: hidden;
+}
+
 img {
   display: block;
   max-width: 100%;
@@ -96,14 +100,22 @@ code {
 }
 
 .brand strong {
-  font-size: 1rem;
-  line-height: 1.1;
+  font-family: "Oswald", "Inter", ui-sans-serif, system-ui, sans-serif;
+  font-size: clamp(1.45rem, 1rem + 1.4vw, 2rem);
+  font-weight: 700;
+  letter-spacing: 0.012em;
+  line-height: 1;
+  text-transform: uppercase;
+  color: var(--ink);
   overflow-wrap: anywhere;
 }
 
 .brand small {
   color: var(--muted);
-  font-size: 0.78rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  margin-top: 4px;
   text-transform: uppercase;
 }
 
@@ -272,6 +284,10 @@ h3 {
   color: var(--ink);
 }
 
+.archie-trigger {
+  cursor: pointer;
+}
+
 .archie-note {
   background:
     linear-gradient(135deg, rgba(230, 173, 49, 0.18), rgba(255, 255, 255, 0.72)),
@@ -287,6 +303,15 @@ h3 {
 
 .archie-note.light {
   background: rgba(255, 255, 255, 0.12);
+  border-color: var(--gold);
+  color: var(--white);
+}
+
+.archie-note.archie-note-dark {
+  background:
+    linear-gradient(rgba(28, 32, 25, 0.92), rgba(28, 32, 25, 0.92)),
+    var(--camo-pattern);
+  background-size: auto, 260px 180px;
   border-color: var(--gold);
   color: var(--white);
 }
@@ -445,6 +470,22 @@ h3 {
   text-underline-offset: 5px;
 }
 
+.archie-link {
+  background: none;
+  border: 0;
+  color: var(--field-dark);
+  cursor: pointer;
+  display: inline-block;
+  font: inherit;
+  font-weight: 900;
+  margin-top: 18px;
+  padding: 0;
+  text-decoration: underline;
+  text-decoration-color: var(--gold);
+  text-decoration-thickness: 3px;
+  text-underline-offset: 5px;
+}
+
 .cta {
   align-items: center;
   background:
@@ -516,7 +557,6 @@ h3 {
 }
 
 .truck-photo-slot {
-  align-items: center;
   aspect-ratio: 4 / 3;
   background:
     linear-gradient(135deg, rgba(28, 32, 25, 0.74), rgba(230, 173, 49, 0.26)),
@@ -525,18 +565,36 @@ h3 {
   border: 1px solid rgba(28, 32, 25, 0.2);
   box-shadow: var(--shadow);
   color: var(--white);
-  display: flex;
-  font-weight: 900;
-  justify-content: center;
+  margin: 0;
   min-height: 220px;
-  padding: 24px;
-  text-align: center;
-  text-transform: uppercase;
+  overflow: hidden;
+  position: relative;
 }
 
 .truck-photo-slot.primary-slot {
   aspect-ratio: 3 / 4;
   grid-row: span 2;
+}
+
+.truck-photo-slot img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.truck-photo-slot figcaption {
+  background:
+    linear-gradient(rgba(28, 32, 25, 0.88), rgba(28, 32, 25, 0.88)),
+    var(--camo-pattern);
+  background-size: auto, 220px 150px;
+  bottom: 12px;
+  color: var(--white);
+  font-size: 0.78rem;
+  font-weight: 900;
+  left: 12px;
+  max-width: calc(100% - 24px);
+  padding: 6px 10px;
+  position: absolute;
 }
 
 .truck-cards .card:nth-child(2) {
@@ -607,7 +665,7 @@ h3 {
 .before-after {
   display: grid;
   gap: 14px;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
 .project-photo {
@@ -623,6 +681,10 @@ h3 {
   height: 100%;
   object-fit: cover;
   width: 100%;
+}
+
+.project-photo.portrait img {
+  aspect-ratio: 3 / 4;
 }
 
 .project-photo figcaption {
@@ -759,6 +821,79 @@ h3 {
   flex-wrap: wrap;
   gap: 12px;
   margin-top: 24px;
+}
+
+.archie-modal {
+  inset: 0;
+  position: fixed;
+  z-index: 30;
+}
+
+.archie-modal-backdrop {
+  background: rgba(21, 24, 18, 0.74);
+  inset: 0;
+  position: absolute;
+}
+
+.archie-modal-dialog {
+  inset: 50% auto auto 50%;
+  max-width: min(92vw, 760px);
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+.archie-modal-close {
+  background:
+    linear-gradient(rgba(28, 32, 25, 0.88), rgba(28, 32, 25, 0.88)),
+    var(--camo-pattern);
+  background-size: auto, 260px 180px;
+  border: 0;
+  border-radius: 999px;
+  color: var(--white);
+  cursor: pointer;
+  font-weight: 900;
+  padding: 10px 16px;
+  position: absolute;
+  right: 14px;
+  top: 14px;
+  z-index: 1;
+}
+
+.archie-modal-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  box-shadow: 0 28px 80px rgba(21, 24, 18, 0.34);
+  margin: 0;
+  overflow: hidden;
+}
+
+.archie-modal-card img {
+  aspect-ratio: 4 / 3;
+  display: block;
+  object-fit: cover;
+  object-position: center top;
+  width: 100%;
+}
+
+.archie-modal-card figcaption {
+  background:
+    linear-gradient(180deg, rgba(248, 246, 238, 0.96), rgba(233, 229, 216, 0.96)),
+    var(--camo-pattern);
+  background-size: auto, 420px 260px;
+  padding: 26px 24px 28px;
+}
+
+.archie-modal-card h2 {
+  margin-bottom: 12px;
+}
+
+.archie-modal-card figcaption p:last-child {
+  color: var(--ink);
+  font-size: 1.08rem;
+  font-weight: 800;
+  margin-bottom: 0;
 }
 
 .site-footer {
@@ -917,11 +1052,12 @@ h3 {
   }
 
   .brand strong {
-    font-size: 0.9rem;
+    font-size: 1.3rem;
   }
 
   .brand small {
-    font-size: 0.68rem;
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
   }
 
   h1 {
@@ -972,6 +1108,10 @@ h3 {
     width: 100%;
   }
 
+  .archie-link {
+    margin-top: 16px;
+  }
+
   .before-after {
     grid-template-columns: 1fr;
   }
@@ -984,6 +1124,19 @@ h3 {
     bottom: 8px;
     left: 8px;
   }
+
+  .archie-modal-dialog {
+    max-width: min(92vw, 560px);
+  }
+
+  .archie-modal-close {
+    right: 10px;
+    top: 10px;
+  }
+
+  .archie-modal-card figcaption {
+    padding: 22px 18px 24px;
+  }
 }
 
 @media (max-width: 380px) {
@@ -992,7 +1145,7 @@ h3 {
   }
 
   .brand strong {
-    font-size: 0.82rem;
+    font-size: 1.1rem;
   }
 
   .nav-toggle {
