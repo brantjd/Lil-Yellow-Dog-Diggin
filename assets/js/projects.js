@@ -1,5 +1,53 @@
 window.LYD_PROJECTS = [
   {
+    category: "Walking bridge install",
+    title: "A heavy 24-foot prebuilt bridge moved, set, and leveled into place",
+    description: "Need a big, heavy 24-foot prebuilt bridge moved, set, and leveled up? That's right in our wheelhouse. We pulled out the old 24-inch culvert, cleaned up the ditch underneath, and prettied the whole crossing up the best we could. Now you can ride a golf cart across or walk your yellow dog across in style — or any other color dog, for that matter. A big thank-you to the folks involved for the opportunity to do this one.",
+    photos: [
+      {
+        label: "Before",
+        src: "assets/images/projects/bridge-before-old-culvert.jpeg",
+        alt: "Compact excavator digging out the old 24-inch culvert on the wooded trail",
+        variant: "portrait",
+      },
+      {
+        label: "The span",
+        src: "assets/images/projects/bridge-prebuilt-span.jpeg",
+        alt: "The heavy 24-foot prebuilt wooden bridge loaded on a trailer and ready to haul in",
+      },
+      {
+        label: "During, moving in",
+        src: "assets/images/projects/bridge-during-moving.jpeg",
+        alt: "Tractor and excavator moving the prebuilt bridge down the trail toward the crossing",
+        variant: "portrait",
+      },
+      {
+        label: "During, setting the span",
+        src: "assets/images/projects/bridge-during-setting.jpeg",
+        alt: "Crew maneuvering the wooden bridge into position over the ditch",
+        variant: "portrait",
+      },
+      {
+        label: "During, set in place",
+        src: "assets/images/projects/bridge-during-placed.jpeg",
+        alt: "The bridge set across the freshly dug-out ditch before final cleanup",
+      },
+      {
+        label: "After, leveled up",
+        src: "assets/images/projects/bridge-after-leveled.jpeg",
+        alt: "Bridge set and leveled over the cleaned-out ditch with the approaches being finished",
+      },
+      {
+        label: "After, cleaned up",
+        src: "assets/images/projects/bridge-after-finished.jpeg",
+        alt: "Finished walking bridge with the crossing graded and tidied up",
+        variant: "portrait",
+      },
+    ],
+    location: "Wooded trail creek crossing",
+    equipment: "Compact excavator, tractor, and trailer — moving, setting, and leveling the prebuilt span",
+  },
+  {
     category: "Field access road",
     title: "Hillside access road detoured around a spring and built back up",
     description: "This field access road climbs a hill with a spring bubbling up right in the middle, so the owner kept burying his big tractor in the soft spot every year. We detoured the spring and built a French drain with sand to carry the water off, backfilled until the pipe ran a quarter full, crowned the road so it sheds water, and ditched one side to keep it draining. A few trees were plucked out and the whole run was tidied up so it's a road you can actually count on.",

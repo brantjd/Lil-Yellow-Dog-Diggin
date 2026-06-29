@@ -290,11 +290,11 @@ h3 {
 
 .archie-note {
   background:
-    linear-gradient(135deg, rgba(230, 173, 49, 0.18), rgba(255, 255, 255, 0.72)),
+    linear-gradient(rgba(28, 32, 25, 0.92), rgba(28, 32, 25, 0.92)),
     var(--camo-pattern);
   background-size: auto, 260px 180px;
   border-left: 6px solid var(--gold);
-  color: var(--ink);
+  color: var(--white);
   font-weight: 850;
   margin: 24px 0 0;
   max-width: 620px;
@@ -332,13 +332,17 @@ h3 {
 
 .intro-grid {
   background:
-    linear-gradient(90deg, rgba(248, 246, 238, 0.96), rgba(248, 246, 238, 0.84)),
+    linear-gradient(90deg, rgba(28, 32, 25, 0.93), rgba(38, 52, 33, 0.84)),
     var(--camo-pattern);
   background-size: auto, 520px 320px;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--white);
 }
 
-.intro-grid p:last-child,
+.intro-grid .eyebrow {
+  color: var(--gold);
+}
+
 .page-hero p,
 .split p,
 .card p,
@@ -350,7 +354,7 @@ h3 {
 
 .service-band {
   background:
-    linear-gradient(rgba(28, 32, 25, 0.7), rgba(28, 32, 25, 0.7)),
+    linear-gradient(rgba(24, 28, 21, 0.9), rgba(24, 28, 21, 0.9)),
     var(--camo-pattern);
   background-size: auto, 420px 260px;
   color: var(--white);
@@ -362,13 +366,18 @@ h3 {
 }
 
 .service-band article {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(20, 24, 18, 0.5);
   min-height: 240px;
   padding: clamp(28px, 5vw, 58px);
 }
 
+.service-band article h3,
 .service-band p {
-  color: rgba(255, 255, 255, 0.76);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+.service-band p {
+  color: rgba(255, 255, 255, 0.92);
 }
 
 .media-placeholder {
@@ -502,23 +511,32 @@ h3 {
 .business-strip {
   align-items: center;
   background:
-    linear-gradient(90deg, rgba(233, 229, 216, 0.96), rgba(233, 229, 216, 0.82)),
+    linear-gradient(90deg, rgba(28, 32, 25, 0.93), rgba(38, 52, 33, 0.84)),
     var(--camo-pattern);
   background-size: auto, 520px 320px;
-  border-top: 1px solid var(--line);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--white);
   display: flex;
   gap: 26px;
   justify-content: space-between;
 }
 
+.business-strip .eyebrow {
+  color: var(--gold);
+}
+
 .business-strip p {
-  color: var(--muted);
+  color: rgba(255, 255, 255, 0.85);
   max-width: 760px;
 }
 
 .cta h2 {
   margin-bottom: 0;
   max-width: 900px;
+}
+
+.cta .eyebrow {
+  color: var(--gold);
 }
 
 .page-hero {
@@ -726,6 +744,33 @@ h3 {
   color: var(--ink);
   font-weight: 800;
   margin: 2px 0 0;
+}
+
+.spec-list {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+}
+
+.spec-list div {
+  background: var(--white);
+  border-left: 6px solid var(--gold);
+  box-shadow: var(--shadow);
+  padding: 16px 18px;
+}
+
+.spec-list dt {
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.spec-list dd {
+  color: var(--ink);
+  font-size: 1.05rem;
+  font-weight: 800;
+  margin: 4px 0 0;
 }
 
 .empty-gallery {
