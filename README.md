@@ -15,10 +15,12 @@ Static website shell for Cloudflare Pages.
 Use these settings:
 
 - Framework preset: None
-- Build command: leave blank
-- Build output directory: `/`
+- Build command: `./scripts/build-dist.sh`
+- Build output directory: `dist`
 
 If deploying from a repository subdirectory, set the project root to this folder.
+
+The repository includes some source-only photo upload folders that are not part of the live site. The build script creates a clean deployable `dist/` folder so Cloudflare Pages only uploads the files that are actually referenced by the site.
 
 ## Adding Before and After Photos
 
