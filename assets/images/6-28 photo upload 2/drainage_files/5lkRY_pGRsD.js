@@ -1,4 +1,0 @@
-;/*FB_PKG_DELIM*/
-
-__d("buildFBUnifiedVideoWithLeftRailRoute.entrypoint",["JSResourceForInteraction","createContentAreaCompoundEntryPointBuilder"],(function(t,n,r,o,a,i,l){"use strict";var e=r("JSResourceForInteraction")("FBUnifiedVideoWithLeftRailRoot.react").__setRef("buildFBUnifiedVideoWithLeftRailRoute.entrypoint"),s=r("createContentAreaCompoundEntryPointBuilder")(e,function(e){return{}});l.default=s}),98);
-__d("FBUnifiedVideoForYouRoot.entrypoint",["FBUnifiedVideoRoot.entrypointutils","JSResourceForInteraction","buildFBUnifiedVideoWithLeftRailRoute.entrypoint"],(function(t,n,r,o,a,i,l){"use strict";var e=r("buildFBUnifiedVideoWithLeftRailRoute.entrypoint")(r("JSResourceForInteraction")("FBUnifiedVideoRoot.react").__setRef("FBUnifiedVideoForYouRoot.entrypoint"),function(e){return o("FBUnifiedVideoRoot.entrypointutils").getFBUnifiedVideoRootPreloadProps(e)});l.default=e}),98);
