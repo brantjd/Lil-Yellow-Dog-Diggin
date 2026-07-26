@@ -746,6 +746,57 @@ h3 {
   margin: 2px 0 0;
 }
 
+.gallery-archive {
+  border-top: 1px solid var(--line);
+  padding-top: 44px;
+}
+
+.archive-group {
+  background: var(--white);
+  border: 1px solid var(--line);
+  margin-bottom: 16px;
+}
+
+.archive-group > summary {
+  align-items: center;
+  color: var(--ink);
+  cursor: pointer;
+  display: flex;
+  font-family: "Oswald", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  justify-content: space-between;
+  letter-spacing: 0.04em;
+  list-style: none;
+  padding: 18px 22px;
+  text-transform: uppercase;
+}
+
+.archive-group > summary::-webkit-details-marker {
+  display: none;
+}
+
+.archive-group > summary::after {
+  color: var(--gold);
+  content: "+";
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-left: 16px;
+}
+
+.archive-group[open] > summary::after {
+  content: "\2013";
+}
+
+.archive-group[open] > summary {
+  border-bottom: 1px solid var(--line);
+}
+
+.archive-group > .gallery-list {
+  padding: 32px 22px;
+}
+
 .spec-list {
   display: grid;
   gap: 12px;

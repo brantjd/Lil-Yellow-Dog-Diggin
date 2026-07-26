@@ -104,6 +104,29 @@ if (archieTriggers.length > 0) {
 }
 
 const projectGallery = document.querySelector("#project-gallery");
+const projectArchive = document.querySelector("#project-archive");
+const archiveGroups = document.querySelector("#archive-groups");
+
+// Show the newest few projects up top; everything older drops into the archive,
+// grouped by month/year, so the page doesn't turn into an endless scroll.
+const ACTIVE_PROJECT_COUNT = 4;
+const MONTH_NAMES = [
+  "January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December",
+];
+
+function formatProjectMonth(date) {
+  if (typeof date !== "string") {
+    return "Older projects";
+  }
+
+  const [year, month] = date.split("-").map(Number);
+  if (!year || !month || month < 1 || month > 12) {
+    return "Older projects";
+  }
+
+  return `${MONTH_NAMES[month - 1]} ${year}`;
+}
 
 function createProjectPhoto(photo, projectTitle) {
   const src = photo.src;
@@ -150,46 +173,85 @@ function getProjectPhotos(project) {
   ];
 }
 
+function renderProject(project) {
+  const article = document.createElement("article");
+  article.className = "project";
+
+  const photos = document.createElement("div");
+  photos.className = "before-after";
+  photos.append(
+    ...getProjectPhotos(project)
+      .map((photo) => createProjectPhoto(photo, project.title))
+      .filter(Boolean),
+  );
+
+  const content = document.createElement("div");
+  content.innerHTML = `
+    <p class="eyebrow">${project.category}</p>
+    <h2>${project.title}</h2>
+    <p>${project.description}</p>
+  `;
+
+  if (project.location || project.equipment) {
+    const meta = document.createElement("dl");
+    meta.className = "project-meta";
+
+    if (project.location) {
+      meta.innerHTML += `<div><dt>Area</dt><dd>${project.location}</dd></div>`;
+    }
+
+    if (project.equipment) {
+      meta.innerHTML += `<div><dt>Equipment</dt><dd>${project.equipment}</dd></div>`;
+    }
+
+    content.append(meta);
+  }
+
+  article.append(photos, content);
+  return article;
+}
+
 if (projectGallery && Array.isArray(window.LYD_PROJECTS)) {
-  if (window.LYD_PROJECTS.length === 0) {
-    projectGallery.innerHTML = "";
-  } else {
-    window.LYD_PROJECTS.forEach((project) => {
-      const article = document.createElement("article");
-      article.className = "project";
+  const sorted = window.LYD_PROJECTS
+    .slice()
+    .sort((a, b) => String(b.date || "").localeCompare(String(a.date || "")));
 
-      const photos = document.createElement("div");
-      photos.className = "before-after";
-      photos.append(
-        ...getProjectPhotos(project)
-          .map((photo) => createProjectPhoto(photo, project.title))
-          .filter(Boolean),
-      );
+  const active = sorted.slice(0, ACTIVE_PROJECT_COUNT);
+  const archived = sorted.slice(ACTIVE_PROJECT_COUNT);
 
-      const content = document.createElement("div");
-      content.innerHTML = `
-        <p class="eyebrow">${project.category}</p>
-        <h2>${project.title}</h2>
-        <p>${project.description}</p>
-      `;
+  projectGallery.innerHTML = "";
+  active.forEach((project) => projectGallery.append(renderProject(project)));
 
-      if (project.location || project.equipment) {
-        const meta = document.createElement("dl");
-        meta.className = "project-meta";
+  if (archived.length > 0 && projectArchive && archiveGroups) {
+    const groups = [];
+    let currentGroup = null;
 
-        if (project.location) {
-          meta.innerHTML += `<div><dt>Area</dt><dd>${project.location}</dd></div>`;
-        }
-
-        if (project.equipment) {
-          meta.innerHTML += `<div><dt>Equipment</dt><dd>${project.equipment}</dd></div>`;
-        }
-
-        content.append(meta);
+    archived.forEach((project) => {
+      const label = formatProjectMonth(project.date);
+      if (!currentGroup || currentGroup.label !== label) {
+        currentGroup = { label, projects: [] };
+        groups.push(currentGroup);
       }
-
-      article.append(photos, content);
-      projectGallery.append(article);
+      currentGroup.projects.push(project);
     });
+
+    archiveGroups.innerHTML = "";
+    groups.forEach((group) => {
+      const details = document.createElement("details");
+      details.className = "archive-group";
+
+      const summary = document.createElement("summary");
+      const count = group.projects.length;
+      summary.textContent = `${group.label} · ${count} project${count === 1 ? "" : "s"}`;
+
+      const list = document.createElement("div");
+      list.className = "gallery-list";
+      group.projects.forEach((project) => list.append(renderProject(project)));
+
+      details.append(summary, list);
+      archiveGroups.append(details);
+    });
+
+    projectArchive.hidden = false;
   }
 }
