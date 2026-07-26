@@ -111,10 +111,7 @@ function createProjectPhoto(photo, projectTitle) {
   const alt = photo.alt || `${label} photo for ${projectTitle}`;
 
   if (!src) {
-    const placeholder = document.createElement("div");
-    placeholder.className = `media-placeholder ${label.toLowerCase().includes("after") ? "after" : ""}`;
-    placeholder.innerHTML = `<span>${label} photo</span>`;
-    return placeholder;
+    return null;
   }
 
   const figure = document.createElement("figure");
@@ -155,7 +152,7 @@ function getProjectPhotos(project) {
 
 if (projectGallery && Array.isArray(window.LYD_PROJECTS)) {
   if (window.LYD_PROJECTS.length === 0) {
-    projectGallery.innerHTML = '<p class="empty-gallery">Project photos are coming soon.</p>';
+    projectGallery.innerHTML = "";
   } else {
     window.LYD_PROJECTS.forEach((project) => {
       const article = document.createElement("article");
@@ -164,7 +161,9 @@ if (projectGallery && Array.isArray(window.LYD_PROJECTS)) {
       const photos = document.createElement("div");
       photos.className = "before-after";
       photos.append(
-        ...getProjectPhotos(project).map((photo) => createProjectPhoto(photo, project.title)),
+        ...getProjectPhotos(project)
+          .map((photo) => createProjectPhoto(photo, project.title))
+          .filter(Boolean),
       );
 
       const content = document.createElement("div");
