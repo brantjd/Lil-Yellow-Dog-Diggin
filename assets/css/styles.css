@@ -1,3 +1,21 @@
+/* Self-hosted fonts (latin variable). Preloaded in each page head + display:swap,
+   so text paints in the final font from the first frame — no swap reflow. */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("../fonts/inter-latin-var.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Oswald";
+  font-style: normal;
+  font-weight: 500 700;
+  font-display: swap;
+  src: url("../fonts/oswald-latin-var.woff2") format("woff2");
+}
+
 :root {
   --ink: #1c2019;
   --muted: #5c6354;
