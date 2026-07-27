@@ -143,5 +143,64 @@
     </footer>
 
     <script src="assets/js/site.js"></script>
+    <!-- TEMP DIAGNOSTIC: remove after diagnosing the load twitch -->
+    <script>
+      (function () {
+        var log = ["DIAG — watch first 1.5s"];
+        var box = document.createElement("div");
+        box.style.cssText =
+          "position:fixed;top:8px;right:8px;z-index:99999;background:rgba(0,0,0,.88);color:#5f5;font:11px/1.4 ui-monospace,monospace;padding:8px 10px;max-width:46ch;max-height:88vh;overflow:auto;border:1px solid #5f5;white-space:pre-wrap;border-radius:6px;pointer-events:none;";
+        var t0 = performance.now();
+        function dt() { return String(Math.round(performance.now() - t0)).padStart(4, " ") + "ms"; }
+        function render() { box.textContent = log.join("\n"); }
+        function add(m) { log.push(m); render(); }
+        function snap(tag) {
+          var de = document.documentElement;
+          var vv = window.visualViewport;
+          add(
+            dt() + " " + tag +
+            "  winW=" + window.innerWidth +
+            " clientW=" + de.clientWidth +
+            " scrollH=" + de.scrollHeight +
+            (vv ? "  vvW=" + Math.round(vv.width) + " scale=" + vv.scale.toFixed(3) : "")
+          );
+        }
+        function start() {
+          document.body.appendChild(box);
+          snap("init");
+          render();
+        }
+        if (document.body) start();
+        else document.addEventListener("DOMContentLoaded", start);
+
+        var cls = 0;
+        try {
+          new PerformanceObserver(function (list) {
+            list.getEntries().forEach(function (e) {
+              if (!e.hadRecentInput) {
+                cls += e.value;
+                add(dt() + " ▶ LAYOUT SHIFT +" + e.value.toFixed(4) + "  (total " + cls.toFixed(4) + ")");
+              }
+            });
+          }).observe({ type: "layout-shift", buffered: true });
+        } catch (err) { add("(no layout-shift API)"); }
+
+        if (document.fonts && document.fonts.ready) {
+          document.fonts.ready.then(function () {
+            add(dt() + " ✔ FONTS ready");
+            snap("after-fonts");
+          });
+        }
+        window.addEventListener("load", function () {
+          snap("load");
+          setTimeout(function () { snap("load+400"); }, 400);
+          setTimeout(function () { snap("load+1200"); add("— done —"); }, 1200);
+        });
+        window.addEventListener("resize", function () { snap("RESIZE"); });
+        if (window.visualViewport) {
+          window.visualViewport.addEventListener("resize", function () { snap("VV-RESIZE"); });
+        }
+      })();
+    </script>
   </body>
 </html>
