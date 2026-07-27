@@ -28,16 +28,21 @@ html {
   color: var(--ink);
   scroll-behavior: smooth;
   text-size-adjust: 100%;
-  /* Always reserve the vertical scrollbar's width so navigating between pages of
-     different heights doesn't shift the layout sideways (the per-page "twitch"). */
+  /* Keep the viewport the single scroll container and always reserve the vertical
+     scrollbar's width, so pages of differing height don't toggle the scrollbar and
+     shift the layout sideways (the per-page "twitch"). */
   scrollbar-gutter: stable;
+  overflow-x: clip;
 }
 
 body {
   margin: 0;
   font-size: 16px;
   line-height: 1.6;
-  overflow-x: hidden;
+  /* clip (not hidden) prevents horizontal overflow WITHOUT turning the body into
+     its own scroll container, which would otherwise defeat the gutter reservation
+     on html and let the scrollbar toggle jump the layout on every page. */
+  overflow-x: clip;
 }
 
 body.modal-open {
