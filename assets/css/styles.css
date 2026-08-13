@@ -1263,6 +1263,40 @@ h3 {
   .archie-modal-card figcaption {
     padding: 22px 18px 24px;
   }
+
+  /* ===================================================================
+     MOBILE DENSITY TRIM — added 2026-08-12
+     Tighter vertical spacing on phones (≤560px) to reduce scrolling.
+     Overrides the mobile section/hero padding set earlier in this block.
+     ROLLBACK: delete this entire commented block, then rebuild
+     (scripts/build-dist.sh) — nothing else depends on it.
+     ORIGINAL mobile values (restore these if reverting by hand):
+       .hero-content              padding: 120px 18px 54px;
+       .section                   padding: 44px 18px;  gap: 26px (clamp min)
+       .page-hero                 padding: 54px 18px 42px;
+       card/article/contact/etc.  padding: 22px;
+     =================================================================== */
+  .hero-content {
+    padding: 88px 18px 38px;
+  }
+
+  .section {
+    padding: 30px 18px;
+    gap: 18px;
+  }
+
+  .page-hero {
+    padding: 40px 18px 28px;
+  }
+
+  .service-band article,
+  .card,
+  .process li,
+  .equipment-list article,
+  .contact-details {
+    padding: 18px;
+  }
+  /* ============ end MOBILE DENSITY TRIM ============ */
 }
 
 @media (max-width: 380px) {
