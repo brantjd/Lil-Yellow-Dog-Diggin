@@ -1039,6 +1039,33 @@ h3 {
   margin: 0;
 }
 
+/* Build credit. Deliberately the quietest line in the footer: smaller and
+   dimmer than the two site lines, so it reads as an attribution rather than
+   site content. Still holds ~5.5:1 on the camo ground, comfortably above the
+   4.5:1 floor — quiet is not the same as unreadable. */
+.footer-credit {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.82rem;
+}
+
+.footer-credit a {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+  color: inherit;
+  text-decoration: none;
+}
+
+.footer-credit a:hover {
+  border-bottom-color: var(--gold);
+  color: var(--white);
+}
+
+.footer-credit a:focus-visible {
+  border-bottom-color: transparent;
+  color: var(--white);
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
 @media (max-width: 1080px) {
   .site-header {
     align-items: flex-start;
