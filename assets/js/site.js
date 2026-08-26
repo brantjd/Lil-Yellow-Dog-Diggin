@@ -15,7 +15,7 @@ if (year) {
 }
 
 const archieTriggers = document.querySelectorAll("[data-archie-quote]");
-const defaultArchieImage = "assets/images/archie-trademark.jpeg";
+const defaultArchieImage = "assets/images/archie-grin.jpeg";
 
 function ensureArchieModal() {
   let modal = document.querySelector("#archie-modal");
@@ -38,7 +38,7 @@ function ensureArchieModal() {
             Close
           </button>
           <figure class="archie-modal-card">
-            <img id="archie-modal-image" src="${defaultArchieImage}" alt="Archie the yellow lab with a muddy nose">
+            <img id="archie-modal-image" src="${defaultArchieImage}" alt="Archie the yellow lab grinning at the camera with dirt still on his nose">
             <figcaption>
               <p class="eyebrow">Trademark Archie</p>
               <h2 id="archie-modal-title">Archie says</h2>
