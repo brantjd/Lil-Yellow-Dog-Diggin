@@ -4,6 +4,149 @@
 // best-guess placeholders — update them to the real job months if you know them.
 window.LYD_PROJECTS = [
   {
+    date: "2026-08",
+    category: "Water line & hydrants",
+    title: "A 400-foot water line trenched in and hydrants set",
+    description: "Four hundred feet of water line, from the well house down by the pond all the way out to where the water was actually needed. There's no shortcut on a run like this — you open the trench, you lay the pipe, you glue it up, and you tee off your risers for the hydrants. We took it across the gravel drive, out through the yard, and tied the whole thing back in at the well house. Three days start to finish. The yellow dog inspected every foot of that trench, mostly at a dead run.",
+    photos: [
+      {
+        label: "During, opening the trench",
+        src: "assets/images/projects/waterline-during-opening.jpeg",
+        alt: "Compact excavator opening the water line trench across the gravel drive with the spoil piled up alongside",
+        variant: "portrait",
+      },
+      {
+        label: "During, crossing the drive",
+        src: "assets/images/projects/waterline-during-drive.jpeg",
+        alt: "Tractor and excavator working the open trench where it cuts across the gravel driveway",
+        variant: "portrait",
+      },
+      {
+        label: "During, the full run",
+        src: "assets/images/projects/waterline-during-run.jpeg",
+        alt: "The open trench running back toward the barn with the yellow dog trotting up the bottom of it",
+        variant: "portrait",
+      },
+      {
+        label: "During, pipe staged",
+        src: "assets/images/projects/waterline-during-pipe-staged.jpeg",
+        alt: "The finished trench with white water line pipe laid out alongside, ready to drop in",
+        variant: "portrait",
+      },
+      {
+        label: "During, at the well house",
+        src: "assets/images/projects/waterline-during-wellhouse.jpeg",
+        alt: "The trench dug in around the well house by the pond where the new line ties into the water source",
+        variant: "portrait",
+      },
+      {
+        label: "During, hydrant riser teed in",
+        src: "assets/images/projects/waterline-during-hydrant.jpeg",
+        alt: "Water line glued up in the bottom of the trench with a riser teed off for a hydrant",
+        variant: "portrait",
+      },
+    ],
+    location: "Farmstead — well house out to the hydrants",
+    equipment: "Compact excavator and tractor — 400 feet of trenching, water line, hydrant risers, and backfill (three days)",
+  },
+  {
+    date: "2026-08",
+    category: "Billboard demolition",
+    title: "An old roadside billboard taken down and the right-of-way raked clean",
+    description: "An old billboard along the road had outlived its usefulness, so down it came. Working right at the edge of the road with power lines overhead is the kind of job where you slow down and pay attention — cones out, and nothing left in the ditch when you pull away. We dropped the face, broke down the framing and the posts, hauled the whole mess off, and raked the strip back down. All that's left is a couple of cut-off posts and a clean roadside.",
+    photos: [
+      {
+        label: "Before, staged",
+        src: "assets/images/projects/billboard-before-staged.jpeg",
+        alt: "The Lil Yellow Dog excavator staged in the tall grass along the road with the yellow dog sitting up in the operator's seat",
+      },
+      {
+        label: "During, sign down",
+        src: "assets/images/projects/billboard-during-down.jpeg",
+        alt: "The billboard face and splintered plywood framing piled on the ground beside the cornfield",
+      },
+      {
+        label: "During, breaking it down",
+        src: "assets/images/projects/billboard-during-debris.jpeg",
+        alt: "The torn-down billboard and broken framing seen from the excavator cab, with a safety cone set out on the road and power lines overhead",
+        variant: "portrait",
+      },
+      {
+        label: "After, raked clean",
+        src: "assets/images/projects/billboard-after-raked.jpeg",
+        alt: "The cleaned-up roadside strip seen from the cab with the old posts cut off flush",
+      },
+      {
+        label: "After, hauled off",
+        src: "assets/images/projects/billboard-after-cleared.jpeg",
+        alt: "The finished roadside with all the debris hauled away and only the cut-off posts left standing",
+      },
+    ],
+    location: "Roadside right-of-way",
+    equipment: "Compact excavator and flatbed truck — teardown, post removal, haul-off, and cleanup",
+  },
+  {
+    date: "2026-08",
+    category: "Brush clearing",
+    title: "Overgrown brush cleared back off a home's yard and tree line",
+    description: "The brush had crept in until it was crowding the side of the house and swallowing the back edge of the yard. We worked the whole tree line with the excavator and ran the brush mower behind it, pulled the undergrowth out from under the good shade trees, and opened the line back out to the field. The yard ends where it's supposed to again, the big trees have room to breathe, and there's a clean strip along the timber instead of a wall of brush. The yellow dog supervised, which mostly meant running laps through the fresh-cut grass.",
+    photos: [
+      {
+        label: "Before",
+        src: "assets/images/projects/brush-before-overgrown.jpeg",
+        alt: "Thick overgrown brush and cedars crowding right up against the side of the house, with the yellow dog crossing the lawn",
+      },
+      {
+        label: "During",
+        src: "assets/images/projects/brush-during-working.jpeg",
+        alt: "The excavator working the brush line at the back of the yard while the yellow dog trots up the grass",
+      },
+      {
+        label: "During, the cedar line",
+        src: "assets/images/projects/brush-during-cedars.jpeg",
+        alt: "Excavator pulling brush out of the cedar line beside the house with the mowing tractor working behind it",
+      },
+      {
+        label: "During, mowing behind",
+        src: "assets/images/projects/brush-during-treeline.jpeg",
+        alt: "The excavator clearing the tree line while the tractor and brush mower cut the field edge behind it",
+      },
+      {
+        label: "After, opened up",
+        src: "assets/images/projects/brush-after-opened.jpeg",
+        alt: "The same view beside the house with the wall of brush gone and the field visible through the trees",
+      },
+      {
+        label: "After, the back yard",
+        src: "assets/images/projects/brush-after-yard.jpeg",
+        alt: "The cleared back yard with a fresh strip of dirt along the tree line and the house off to the side",
+      },
+      {
+        label: "After, graded out",
+        src: "assets/images/projects/brush-after-graded.jpeg",
+        alt: "The cleared strip beside the house graded down smooth, with the excavator and tractor parked up at the tree line",
+      },
+      {
+        label: "After, under the trees",
+        src: "assets/images/projects/brush-after-canopy.jpeg",
+        alt: "Undergrowth cleared out from under the shade trees so you can see clear through to the house and driveway",
+      },
+      {
+        label: "After, a clean edge",
+        src: "assets/images/projects/brush-after-edge.jpeg",
+        alt: "The mowed lawn meeting a clean, defined tree line where the brush used to run out into the yard",
+      },
+      {
+        label: "After, out to the field",
+        src: "assets/images/projects/brush-after-strip.jpeg",
+        alt: "The cleared strip between the tree line and the cornfield with the yellow dog standing out on it",
+        variant: "portrait",
+      },
+    ],
+    location: "Home yard and tree line",
+    equipment: "Compact excavator with grapple and tractor with brush mower — clearing, mowing, and grading",
+  },
+  {
     date: "2026-07",
     category: "Hillside road build",
     title: "An uphill four-wheeler path turned into a crowned hay-equipment road",

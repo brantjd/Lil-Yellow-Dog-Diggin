@@ -1,8 +1,15 @@
 .DS_Store
 dist/
+
+# Source-only photo drops. The originals stay local; the site ships the
+# resized, renamed copies under assets/images/projects/.
 assets/images/6-28 photo upload/
 assets/images/6-28 photo upload 2/
 assets/images/6-28 photo upload 3/
 assets/images/6-29 photo upload/
 assets/images/7-25 photo upload/
+assets/images/Billboard work/
+assets/images/Brush work/
+assets/images/Water line/
 assets/images/Logos/
+assets/images/Home page image.png

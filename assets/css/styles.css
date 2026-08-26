@@ -205,10 +205,20 @@ code {
   object-position: center center;
 }
 
+/* The rig runs across the middle of the frame; hold that band as the hero
+   crops taller. */
+.hero-photo.rig-sunset {
+  object-position: center 44%;
+}
+
 .hero::after {
+  /* Bottom-up wash with a soft left wedge. The old left-to-right scrim was 94%
+     opaque exactly where the truck sits, which buried it. This keeps the
+     headline legible without flattening the rig or the sunset behind it. */
   background:
-    linear-gradient(90deg, rgba(28, 32, 25, 0.94), rgba(38, 52, 33, 0.66) 44%, rgba(28, 32, 25, 0.18)),
-    radial-gradient(ellipse at 18% 70%, rgba(184, 163, 109, 0.18), transparent 34%);
+    linear-gradient(180deg, rgba(28, 32, 25, 0.34) 0%, rgba(28, 32, 25, 0.06) 34%, rgba(28, 32, 25, 0.9) 92%),
+    linear-gradient(100deg, rgba(28, 32, 25, 0.8) 0%, rgba(28, 32, 25, 0.34) 38%, rgba(28, 32, 25, 0) 62%),
+    radial-gradient(ellipse at 16% 86%, rgba(184, 163, 109, 0.14), transparent 42%);
   content: "";
   inset: 0;
   position: absolute;
@@ -1124,6 +1134,13 @@ h3 {
 
   .hero {
     min-height: min(720px, calc(100svh - 68px));
+  }
+
+  /* A 4:3 frame cropped to a phone's portrait hero cannot hold both ends of
+     the rig. Bias right so the excavator on the trailer stays in shot against
+     the sunset rather than centering on an unreadable dark middle. */
+  .hero-photo.rig-sunset {
+    object-position: 74% 46%;
   }
 
   .hero::after {
