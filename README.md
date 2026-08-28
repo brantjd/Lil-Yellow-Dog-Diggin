@@ -30,6 +30,9 @@ Redirect so `https://www.yellowdog.lol/*` permanently redirects to
 `https://yellowdog.lol/${1}` with the query string preserved. The HTML canonical
 links and sitemap use only the apex hostname.
 
+Current Google Search Console submission status and the next operator steps are
+tracked in [`SEARCH-CONSOLE.md`](./SEARCH-CONSOLE.md).
+
 ## Adding Before and After Photos
 
 1. Add the customer photos to `assets/images/projects/`.
