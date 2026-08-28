@@ -9,6 +9,9 @@ Static website shell for Cloudflare Pages.
 - `gallery.html`
 - `equipment.html`
 - `about.html`
+- `big-yellow-dog-truckin.html`
+- `robots.txt`
+- `sitemap.xml`
 
 ## Cloudflare Pages
 
@@ -21,6 +24,11 @@ Use these settings:
 If deploying from a repository subdirectory, set the project root to this folder.
 
 The repository includes some source-only photo upload folders that are not part of the live site. The build script creates a clean deployable `dist/` folder so Cloudflare Pages only uploads the files that are actually referenced by the site.
+
+The canonical public hostname is `yellowdog.lol`. Configure a Cloudflare Single
+Redirect so `https://www.yellowdog.lol/*` permanently redirects to
+`https://yellowdog.lol/${1}` with the query string preserved. The HTML canonical
+links and sitemap use only the apex hostname.
 
 ## Adding Before and After Photos
 

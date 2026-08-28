@@ -20,6 +20,8 @@ cd "$ROOT_DIR"
 # Files copied verbatim. Anything they reference comes along automatically.
 PAGES="
 _headers
+robots.txt
+sitemap.xml
 about.html
 big-yellow-dog-truckin.html
 equipment.html
