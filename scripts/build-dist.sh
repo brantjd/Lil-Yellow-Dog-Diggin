@@ -22,6 +22,8 @@ PAGES="
 _headers
 robots.txt
 sitemap.xml
+llms.txt
+404.html
 about.html
 big-yellow-dog-truckin.html
 equipment.html
@@ -32,6 +34,14 @@ assets/css/styles.css
 assets/js/projects.js
 assets/js/site.js
 "
+
+# Derive the gallery's JSON-LD and no-JS fallback from assets/js/projects.js.
+# Same reasoning as the asset scan below: anything hand-maintained goes stale.
+if command -v node >/dev/null 2>&1; then
+  node "$SCRIPT_DIR/generate-gallery-seo.mjs"
+else
+  printf 'build-dist: node not found; gallery.html SEO markup may be stale\n' >&2
+fi
 
 rm -rf "$DIST_DIR"
 mkdir -p "$DIST_DIR"
@@ -56,10 +66,19 @@ for rel_path in $PAGES; do
 done
 
 # Derive the asset list from what those files actually reference.
+#
+# Two forms have to be caught. HTML and JS use root-relative paths
+# ("assets/images/x.jpg"); the stylesheet sits in assets/css/ and refers to its
+# own siblings ("../images/x.png"). Only scanning the first form is how the
+# camo pattern -- referenced solely from styles.css -- silently never shipped.
 assets=$(
-  # shellcheck disable=SC2086
-  grep -hoE 'assets/(images|fonts)/[A-Za-z0-9_@./-]+\.(png|jpe?g|svg|ico|gif|webp|woff2?)' $scan_targets \
-    | sort -u
+  {
+    # shellcheck disable=SC2086
+    grep -hoE 'assets/(images|fonts)/[A-Za-z0-9_@./-]+\.(png|jpe?g|svg|ico|gif|webp|woff2?)' $scan_targets
+    # shellcheck disable=SC2086
+    grep -hoE '\.\./(images|fonts)/[A-Za-z0-9_@./-]+\.(png|jpe?g|svg|ico|gif|webp|woff2?)' $scan_targets \
+      | sed 's|^\.\./|assets/|'
+  } | sort -u
 )
 
 asset_count=0
