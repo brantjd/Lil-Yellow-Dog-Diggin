@@ -28,7 +28,9 @@ searches, which is where most of these customers actually look.
 2. Choose a primary category such as **Excavating Contractor**, and secondary
    categories for land clearing, landscaper, and demolition contractor.
 3. Set it up as a **service-area business** (no storefront address shown) and
-   list the towns and counties actually served.
+   list the same seven counties the site does: Clay, Richland, Effingham,
+   Jasper, Crawford, Coles, and Fayette. The service area in the profile and
+   the service area on the site should match exactly.
 4. Use the exact same business name and phone number as the site:
    Lil Yellow Dog Diggin', (618) 731-1082. Inconsistent name/phone details
    across the web are the classic reason local rankings stall.

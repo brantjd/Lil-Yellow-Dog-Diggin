@@ -56,6 +56,27 @@ reads `projects.js` and writes two things into `gallery.html`:
 `projects.js` is still the only step required. It is idempotent — run it by hand
 any time with `node scripts/generate-gallery-seo.mjs`.
 
+## Service area
+
+Seven Illinois counties: **Clay, Richland, Effingham, Jasper, Crawford, Coles,
+and Fayette**. This is a service-area business with no storefront, so the
+`LocalBusiness` node carries `addressRegion: IL` and `addressCountry: US` only —
+no street address — plus an `areaServed` list of `AdministrativeArea` nodes.
+
+The counties appear in five coupled places. Change one, change all of them:
+
+1. `index.html` — the `areaServed` array in the JSON-LD, the meta description,
+   and the body copy that links to the service-area section.
+2. `services.html` — the page hero paragraph and meta description.
+3. `about.html` — the `#service-area` section (one card per county) and the
+   "Service area" line in the contact panel.
+4. `llms.txt` — the service area and towns-served lines.
+5. Google Business Profile, once it exists — its service-area list has to match.
+
+The town names under each county on `about.html` are the main towns in those
+counties, not a list the owner supplied. If any of them are outside where the
+business will actually travel, trim them.
+
 ## Performance
 
 Core Web Vitals are a ranking input, and this is a photo-heavy site.
@@ -85,12 +106,7 @@ happily upscale a smaller one and make the file bigger.
    service business this outranks everything else on this page: it is what puts
    the business in the map pack and in "excavating near me". Once it exists,
    add its URL to `sameAs` in the home page JSON-LD.
-2. **Add the service area.** The site never names a town, county, or state —
-   only "local and surrounding rural communities in the region". Someone
-   searching "brush clearing <town>" has nothing to match. Add the real towns
-   and counties to `about.html`, and add `areaServed` and `address` to the
-   `LocalBusiness` node in `index.html` and the service area line in `llms.txt`.
-3. **Confirm the www redirect.** `https://www.yellowdog.lol/*` must 301 to
+2. **Confirm the www redirect.** `https://www.yellowdog.lol/*` must 301 to
    `https://yellowdog.lol/*` with the query string preserved, via a Cloudflare
    Single Redirect. The canonicals and sitemap use the apex only.
-4. Search Console follow-ups are tracked in [`SEARCH-CONSOLE.md`](./SEARCH-CONSOLE.md).
+3. Search Console follow-ups are tracked in [`SEARCH-CONSOLE.md`](./SEARCH-CONSOLE.md).
