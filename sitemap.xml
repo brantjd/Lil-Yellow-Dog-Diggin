@@ -1,9 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://yellowdog.lol/</loc><lastmod>2026-08-27</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://yellowdog.lol/services.html</loc><lastmod>2026-08-27</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://yellowdog.lol/gallery.html</loc><lastmod>2026-08-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://yellowdog.lol/equipment.html</loc><lastmod>2026-08-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://yellowdog.lol/about.html</loc><lastmod>2026-08-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://yellowdog.lol/big-yellow-dog-truckin.html</loc><lastmod>2026-08-27</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://yellowdog.lol/</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://yellowdog.lol/assets/images/hero_03_rig-sunset.jpg</image:loc>
+      <image:title>Lil Yellow Dog Diggin rig at sunset</image:title>
+      <image:caption>The Lil Yellow Dog flatbed truck and trailered mini excavator parked along a country road at sunset, with the yellow dog sitting up on the flatbed</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://yellowdog.lol/services.html</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://yellowdog.lol/gallery.html</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://yellowdog.lol/assets/images/hero_01_field-machine.jpg</image:loc>
+      <image:title>Mini excavator working a field edge</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://yellowdog.lol/assets/images/hero_02_loading-hay.jpg</image:loc>
+      <image:title>Compact excavator loading hay</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://yellowdog.lol/equipment.html</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yellowdog.lol/about.html</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yellowdog.lol/big-yellow-dog-truckin.html</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
