@@ -16,7 +16,7 @@ import { dirname, join } from "node:path";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const SITE = "https://yellowdog.lol";
-const GALLERY_URL = `${SITE}/gallery.html`;
+const GALLERY_URL = `${SITE}/gallery`;
 
 // projects.js assigns to `window`; give it one and evaluate it.
 const source = readFileSync(join(ROOT, "assets/js/projects.js"), "utf8");
@@ -54,7 +54,7 @@ const projectNodes = projects.map((p, i) => {
         creditText: "Lil Yellow Dog Diggin'",
         creator: { "@id": `${SITE}/#business` },
         copyrightNotice: "© YellowDog.lol",
-        acquireLicensePage: `${SITE}/about.html#contact`,
+        acquireLicensePage: `${SITE}/about#contact`,
       };
     });
 
