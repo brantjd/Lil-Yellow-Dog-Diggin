@@ -10,8 +10,10 @@ Static website shell for Cloudflare Pages.
 - `equipment.html`
 - `about.html`
 - `big-yellow-dog-truckin.html`
+- `404.html`
 - `robots.txt`
 - `sitemap.xml`
+- `llms.txt`
 
 ## Cloudflare Pages
 
@@ -31,7 +33,22 @@ Redirect so `https://www.yellowdog.lol/*` permanently redirects to
 links and sitemap use only the apex hostname.
 
 Current Google Search Console submission status and the next operator steps are
-tracked in [`SEARCH-CONSOLE.md`](./SEARCH-CONSOLE.md).
+tracked in [`SEARCH-CONSOLE.md`](./SEARCH-CONSOLE.md). How the site's SEO is put
+together — structured data, crawler files, and the image budget — is documented
+in [`SEO.md`](./SEO.md).
+
+## Adding Photos
+
+Resize and compress before committing. The site never displays an image wider
+than about 1000 CSS pixels, so anything over 1600px on the long edge is wasted
+bytes and hurts mobile page speed:
+
+```sh
+sips -Z 1600 -s format jpeg -s formatOptions 58 photo.jpeg --out photo.jpeg
+```
+
+Pass `-Z` only when the photo is actually larger than 1600px; `sips` upscales
+smaller images and makes them heavier.
 
 ## Adding Before and After Photos
 

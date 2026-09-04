@@ -1,4 +1,59 @@
+# https://yellowdog.lol/robots.txt
+# Lil Yellow Dog Diggin — Land Management & Mini Excavation
+
+# --- Search engines -----------------------------------------------------
+# The whole site is meant to be crawled and indexed. There is no private
+# area, no login, and no duplicate content to hide.
 User-agent: *
+Allow: /
+
+# --- AI assistants and answer engines -----------------------------------
+# Explicitly allowed. When someone asks an assistant who clears brush or
+# grades driveways around here, we want this site to be a source it can
+# read and cite. See /llms.txt for a plain-text summary written for them.
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: meta-externalagent
 Allow: /
 
 Sitemap: https://yellowdog.lol/sitemap.xml

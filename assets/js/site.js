@@ -144,6 +144,7 @@ function createProjectPhoto(photo, projectTitle) {
   img.src = src;
   img.alt = alt;
   img.loading = "lazy";
+  img.decoding = "async";
 
   const caption = document.createElement("figcaption");
   caption.textContent = label;
