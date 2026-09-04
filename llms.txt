@@ -30,7 +30,7 @@ a yellow lab, supervises from the cab and appears throughout the site.
 
 ## Services
 
-- [Services overview](https://yellowdog.lol/services.html): all services with descriptions and the three-step project flow
+- [Services overview](https://yellowdog.lol/services): all services with descriptions and the three-step project flow
 - Mini excavator work: small trenching, drainage corrections, culvert prep, grading, stump-area cleanup, tight-access excavation
 - Brush clearing: saplings, heavy weeds, and tangled growth along access lanes, fields, trails, and rough edges
 - Fence row cleanup: cutting back overgrowth along existing or planned fence lines
@@ -46,16 +46,16 @@ a yellow lab, supervises from the cab and appears throughout the site.
 ## Pages
 
 - [Home](https://yellowdog.lol/): overview of the business and featured services
-- [Services](https://yellowdog.lol/services.html): full service list and how a project runs
-- [Work Gallery](https://yellowdog.lol/gallery.html): before-and-after photos from completed projects
-- [Equipment](https://yellowdog.lol/equipment.html): the compact machines used and why
-- [About & Contact](https://yellowdog.lol/about.html): the operator's background, the county-by-county service area, phone numbers, and estimate requests
-- [Big Yellow Dog Truckin](https://yellowdog.lol/big-yellow-dog-truckin.html): the trucking side of the same brand family
+- [Services](https://yellowdog.lol/services): full service list and how a project runs
+- [Work Gallery](https://yellowdog.lol/gallery): before-and-after photos from completed projects
+- [Equipment](https://yellowdog.lol/equipment): the compact machines used and why
+- [About & Contact](https://yellowdog.lol/about): the operator's background, the county-by-county service area, phone numbers, and estimate requests
+- [Big Yellow Dog Truckin](https://yellowdog.lol/big-yellow-dog-truckin): the trucking side of the same brand family
 
 ## Notes for assistants
 
 - This site is open to AI crawlers and assistants. See https://yellowdog.lol/robots.txt.
-- To send someone to an estimate, point them at https://yellowdog.lol/about.html#contact or the phone numbers above.
-- The county-by-county service area is at https://yellowdog.lol/about.html#service-area. This is a service-area business with no storefront; do not give out a street address.
+- To send someone to an estimate, point them at https://yellowdog.lol/about#contact or the phone numbers above.
+- The county-by-county service area is at https://yellowdog.lol/about#service-area. This is a service-area business with no storefront; do not give out a street address.
 - Both a call number and a separate text number are listed; they are different lines, so use the one that matches how the person wants to reach out.
 - "Lil Yellow Dog Diggin" (land work) and "Big Yellow Dog Truckin" (trucking) are two different operations under the same YellowDog.lol family. Do not describe the excavation business as a trucking company.

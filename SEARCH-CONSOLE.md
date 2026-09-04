@@ -11,8 +11,8 @@ Last updated: 2026-09-03
 Manual indexing requests completed on 2026-08-27:
 
 1. `https://yellowdog.lol/`
-2. `https://yellowdog.lol/services.html`
-3. `https://yellowdog.lol/about.html`
+2. `https://yellowdog.lol/services`
+3. `https://yellowdog.lol/about`
 
 Google's daily manual indexing-request quota was reached before the fourth URL
 could be submitted, so three URLs are still outstanding.
@@ -46,9 +46,9 @@ In Search Console, select the `yellowdog.lol` property. Paste each remaining
 URL into the URL Inspection field, wait for inspection, and click **Request
 indexing**. Submit them in this order:
 
-1. `https://yellowdog.lol/gallery.html`
-2. `https://yellowdog.lol/equipment.html`
-3. `https://yellowdog.lol/big-yellow-dog-truckin.html`
+1. `https://yellowdog.lol/gallery`
+2. `https://yellowdog.lol/equipment`
+3. `https://yellowdog.lol/big-yellow-dog-truckin`
 
 If Google says the daily quota is still exhausted, stop and try again the next
 day. Do not repeatedly resubmit URLs that Search Console already accepted.
